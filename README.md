@@ -28,7 +28,7 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unite
 
 ## Introduction
 
-This notebook is a companion to [Capano et al. (arxiv:19XX.YYYYYY)](https://arxiv.org/abs/19XX.YYYYYY). It demonstrates how to read and use our gravitational-wave frame data, equation of state files, and posterior proability density files from the parameter estimation.
+This repository is a companion to [Capano et al. (arxiv:19XX.YYYYYY)](https://arxiv.org/abs/19XX.YYYYYY). It demonstrates how to read and use our gravitational-wave frame data, equation of state files, and posterior proability density files from the parameter estimation.
 
 We encourage use of these data in derivative works. If you use the material provided here, please cite the paper using the reference:
 ```
