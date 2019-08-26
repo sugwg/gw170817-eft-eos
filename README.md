@@ -1,6 +1,6 @@
 # Measuring the viewing angle of GW170817 with electromagnetic and gravitational waves
 
-**Collin D. Capano$<sup>1,2</sup>, Ingo Tews<sup>3</sup>, Stephanie M. Brown<sup>1,2</sup>, Ben Margalit<sup>4,5,6</sup>, Soumi De<sup>6,7</sup>, Sumit Kumar<sup>1,2</sup>, Duncan A. Brown<sup>6,7</sup>, Badri Krishnan<sup>1,2</sup>, Sanjay Reddy<sup>8,9</sup>**
+**Collin D. Capano<sup>1,2</sup>, Ingo Tews<sup>3</sup>, Stephanie M. Brown<sup>1,2</sup>, Ben Margalit<sup>4,5,6</sup>, Soumi De<sup>6,7</sup>, Sumit Kumar<sup>1,2</sup>, Duncan A. Brown<sup>6,7</sup>, Badri Krishnan<sup>1,2</sup>, Sanjay Reddy<sup>8,9</sup>**
 
 **<sup>1</sup>Albert-Einstein-Institut, Max-Planck-Institut für Gravitationsphysik, Callinstraße 38, 30167 Hannover, Germany**
 
