@@ -60,7 +60,7 @@ Computational resources have been provided by Los Alamos Open Supercomputing via
 
 ### Authors contributions:
 Conceptualization, DAB, CDC, BK, BM, SR, IT;
-Data curation, DAB, CDC;
+Data curation, DAB, CDC, IT;
 Formal analysis, CDC, SMB, IT, SD;
 Funding acquisition: DAB, BK, BM, SR, IT;
 Methodology: DAB, CDC, SD, BK, BM, SR, IT;
