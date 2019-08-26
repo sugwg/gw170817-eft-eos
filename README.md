@@ -56,7 +56,7 @@ PHY-1707954 (DAB, SD);
 U.S. Department of Energy grant DE-FG02-00ER41132 (SR);
 NASA Hubble Fellowship grant \#HST-HF2-51412.001-A awarded by the Space Telescope Science Institute, which is operated by the Association of Universities for Research in Astronomy, Inc., for NASA, under contract NAS5-26555 (BM); and the U.S. Department of Energy, Office of Science, Office of Nuclear Physics, under Contract DE-AC52-06NA25396, the Los Alamos National Laboratory (LANL) LDRD program, and the NUCLEI SciDAC program (IT). 
 DAB, SD, and BM thank the Kavli Institute for Theoretical Physics (KITP) where portions of this work were completed. KITP is supported in part by the National Science Foundation under Grant No. NSF PHY-1748958. 
-Computational resources have been provided by Los Alamos Open Supercomputing via the Institutional Computing (IC) program, by the National Energy Research Scientific Computing Center (NERSC), by the J\"ulich Supercomputing Center, by the ATLAS Cluster at the Albert Einstein Institute in Hannover, and by Syracuse University. 
+Computational resources have been provided by Los Alamos Open Supercomputing via the Institutional Computing (IC) program, by the National Energy Research Scientific Computing Center (NERSC), by the J\"ulich Supercomputing Center, by the ATLAS Cluster at the Albert Einstein Institute in Hannover, and by Syracuse University. The gravitational-wave data used in this work was obtained from the Gravitational Wave Open Science Center (GWOSC) at {https://www.gw-openscience.org}. GWOSC is a service of LIGO Laboratory, the LIGO Scientific Collaboration and the Virgo Collaboration. LIGO is funded by the National Science Foundation. Virgo is funded by the French Centre National de Recherche Scientifique (CNRS), the Italian Istituto Nazionale della Fisica Nucleare (INFN) and the Dutch Nikhef, with contributions by Polish and Hungarian institutes.
 
 ### Authors contributions:
 Conceptualization, DAB, CDC, BK, BM, SR, IT;
@@ -66,7 +66,7 @@ Funding acquisition: DAB, BK, BM, SR, IT;
 Methodology: DAB, CDC, SD, BK, BM, SR, IT;
 Project administration: DAB, CDC, BK, IT;
 Resources: DAB, BK, IT;
-Software: SMB, CDC, SD, SK, BM, IT;
+Software: DAB, SMB, CDC, SD, SK, BM, IT;
 Supervision: DAB, BK, SR;
 Validation: DAB, SMB, CDC, SD, IT;
 Visualization: SMB, CDC, BM;
