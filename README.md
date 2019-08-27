@@ -28,7 +28,7 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unite
 
 ## Introduction
 
-This repository is a companion to [Capano et al. (arxiv:19XX.YYYYYY)](https://arxiv.org/abs/19XX.YYYYYY). It contains the Livingston glitch-removed gravitational-wave frame data, the equation of state files, and the posterior proability density files from the parameter estimation.
+This repository is a companion to [Capano et al. (arxiv:19XX.YYYYYY)](https://arxiv.org/abs/19XX.YYYYYY). It contains the Livingston glitch-removed gravitational-wave frame data, the equation of state files, and the posterior probability density files from the parameter estimation.
 
 We encourage use of these data in derivative works. If you use the material provided here, please cite the paper using the reference:
 ```
@@ -41,7 +41,68 @@ Fill in once available
 
  * [eos_data](https://github.com/sugwg/gw170817-eft-eos/tree/master/eos_data) contains the equation of state data using chiral effective field theory computed to either nuclear saturation density [nsat](https://github.com/sugwg/gw170817-eft-eos/tree/master/eos_data/nsat) or twice nuclear saturation density [2nsat](https://github.com/sugwg/gw170817-eft-eos/tree/master/eos_data/2nsat). Each realization of an equation of state is provided in a single plain-text file. The three columns in these files correspond to radius (km), mass (solar masses), and dimensionless tidal polarizability (Lambda) for each equation of state.
  * [frame_data](https://github.com/sugwg/gw170817-eft-eos/tree/master/frame_data) contains the glitch-removed Livingston data used for the gravitational-wave parameter estimation.
- * [posterior_data](https://github.com/sugwg/gw170817-eft-eos/tree/master/posterior_data) contains the posteriors for the equations of state computed to either nuclear saturation density [nsat](https://github.com/sugwg/gw170817-eft-eos/tree/master/posterior_data/nsat) or twice nuclear saturation density [2nsat](https://github.com/sugwg/gw170817-eft-eos/tree/master/posterior_data/2nsat). For each of the two familes of equations of state, the primary results are available in the directory `uniform_mass_prior`. This directory contains three files: `posterior.hdf` contains the gravitational-wave posterior, `posterior_mthresh.hdf` contains the posterior with the threshold mass cut applied, and `posterior_mthresh_maxmass.hdf` contains the posterior with both the threshold mass cut and maximum neutron star mass cut applied. The directories called `dns_mass_prior` contains the same data for the double neutron star mass prior.
+ * [posterior_data](https://github.com/sugwg/gw170817-eft-eos/tree/master/posterior_data) contains the posteriors for the equations of state computed to either nuclear saturation density [nsat](https://github.com/sugwg/gw170817-eft-eos/tree/master/posterior_data/nsat) or twice nuclear saturation density [2nsat](https://github.com/sugwg/gw170817-eft-eos/tree/master/posterior_data/2nsat). For each of the two families of equations of state, the primary results are available in the directory `uniform_mass_prior`. This directory contains three files: `posterior.hdf` contains the gravitational-wave posterior, `posterior_mthresh.hdf` contains the posterior with the threshold mass cut applied, and `posterior_mthresh_maxmass.hdf` contains the posterior with both the threshold mass cut and maximum neutron star mass cut applied. The directories called `dns_mass_prior` contains the same data for the double neutron star mass prior.
+
+## Reading posterior samples
+
+The posterior samples are in the `samples` group in the posterior data hdf files. These may be read in a python environment using an installation of h5py. For example,
+```
+>>> import h5py
+>>> fp = h5py.File('posterior_data/2nsat/uniform_mass_prior/posterior_mthresh_maxmass.hdf', 'r')
+>>> fp['samples/radius_1p4'][:]
+array([10.66445588, 10.33877226, 10.81947201, ..., 11.53508902,
+     11.22292423, 11.77858514])
+```
+
+Provided parameters are:
+ * `mass1`: The source-frame mass of the larger object, in solar masses.
+ * `mass2`: The source-frame mass of the smaller object, in solar masses.
+ * `spin1z`: The dimensionless spin of the larger object.
+ * `spin2z`: The dimensionless spin of the smaller object.
+ * `eos`: The equation of state index. The corresponding equation of state is
+   in the eos directory, with the name of the text file corresponding to the
+   index. Note: the eos indices are stored as floats; to find the appropriate
+   EOS file, take the integer part. For example, `450.87` corresponds to EOS
+   `450`.
+ * `tc`: The geocentric GPS time of the signal merger.
+ * `inclination`: The inclination of the binary's orbital angular momentum with
+   respect to the line of sight, in radians. An inclination of 0 (pi)
+   corresponds to a face-on (face-away) orientation.
+ * `polarization`: The polarization angle of the gravitational wave.
+ * `loglikelihood`: The natural log of the likelihood of each sample.
+
+The following parameters are calculated from the equation of state associated
+with each sample. As such, there are only 2000 unique values of the following,
+even though the total number of samples may be larger.
+ * `lambda1`: The dimensionless tidal polarizability of the larger object.
+ * `lambda2`: The dimensionless tidal polarizability of the smaller object.
+ * `radius1`: The radius of the larger object, in km.
+ * `radius2`: The radius of the smaller object, in km.
+ * `radius_1p4`: The radius of a 1.4 solar mass neutron star with the same
+   equation of state.
+ * `radius_1p6`: The radius of a 1.6 solar mass neutron star with the same
+   equation of state.
+ * `p1p9`: The pressure in the core of a 1.9 solar mass neutron star with the
+   same equation of state, in MeV / cubic fm.
+ * `p2nsat`: The pressure at twice nuclear saturation density, as determined
+   by the equation of state, in MeV / cubic fm.
+ * `p4nsat`: The pressure at four times nuclear saturation density, as
+   determined by the equation of state, in MeV / cubic fm.
+ * `pmax`: The maximum pressure supported by the equation of state, in
+   MeV / cubic fm.
+ * `cs_sq_1p9`: The speed of sound in the core of a 1.9 solar mass neutron star
+   with the same equation of state.
+ * `cs_sq_max`: The maximum speed of sound supported by the equation of state.
+ * `max_mass`: The maximum neutron star mass supported by the equation of
+   state, in solar masses.
+
+In addition, the threshold mass for prompt collapse is provided
+(`threshold_mass`), in solar masses. This is calculated using equation 3 of the
+supplementary material. To account for systematic error in that fit, a random
+draw from a normal distribution with a standard deviation of 0.05 is added to
+each threshold mass sample. As a result, there are more than 2000 unique
+values of the threshold mass, even though it is calculated from the equation
+of state parameters.
 
 
 ## Acknowledgements
