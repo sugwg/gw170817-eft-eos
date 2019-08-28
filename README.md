@@ -28,12 +28,21 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unite
 
 ## Introduction
 
-This repository is a companion to [Capano et al. (arxiv:19XX.YYYYYY)](https://arxiv.org/abs/19XX.YYYYYY). It contains the Livingston glitch-removed gravitational-wave frame data, the equation of state files, and the posterior probability density files from the parameter estimation.
+This repository is a companion to [Capano et al. (arxiv:1908.10352)](https://arxiv.org/abs/1908.10352). It contains the Livingston glitch-removed gravitational-wave frame data, the equation of state files, and the posterior probability density files from the parameter estimation.
 
 We encourage use of these data in derivative works. If you use the material provided here, please cite the paper using the reference:
 ```
-@article{Capano:2019xxx,
-Fill in once available
+@article{Capano:2019,
+      author         = "Capano, Collin D. and Tews, Ingo and Brown, Stephanie M. and
+                        Margalit, Ben and De, Soumi and Kumar, Sumit and Brown, Duncan
+                        A. and Krishnan, Badri and Reddy, Sanjay",
+      title          = "{GW170817: Stringent constraints on neutron-star radii from
+                         mutimessenger observations and nuclear theory}",
+      year           = "2019",
+      eprint         = "1908.10352",
+      archivePrefix  = "arXiv",
+      primaryClass   = "astro-ph.HE",
+      SLACcitation   = "%%CITATION = ARXIV:1908.10352;%%"
 }
 ```
 
